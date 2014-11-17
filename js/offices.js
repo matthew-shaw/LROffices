@@ -53,7 +53,7 @@ document.getElementById('find').onclick = function() {
         var res = leafletKnn(lrOffices).nearest(
             [pos.coords.longitude, pos.coords.latitude], 1);
         if (res.length) {
-            document.getElementById('find').innerHTML = 'Located';
+            document.getElementById('find').innerHTML = '<i class="fa fa-location-arrow"></i> Located';
             var popup = L.popup()
               .setLatLng([res[0].layer.feature.geometry.coordinates[1],res[0].layer.feature.geometry.coordinates[0]])
               .setContent("<h5>Your nearest office is <b><a href='" + res[0].layer.feature.properties.url + "'>" + res[0].layer.feature.properties.name + "</a></b></h5>")
